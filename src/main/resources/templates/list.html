@@ -15,7 +15,7 @@
 <div class="card-body">
 <div th:each="message : ${messages}">
 
-    <h3 th:text="${message.content}"></h3>  <img th:src="${message.pic}" th:height="50" th:width="50" />
+    <h3 th:text="${message.content}"></h3>  <img th:src="${message.pic}" alt= "add a pic" th:height="50" th:width="50" />
     <h6 th:inline="text"> Date Posted: [[${message.posteddate}]]</h6>
     <h6 th:inline="text"> Posted by: [[${message.postedby}]]</h6>
 
