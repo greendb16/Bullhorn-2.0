@@ -9,9 +9,12 @@
 <body>
 <div class="jumbotron">
 
-    <p class="lead"><span th:text="${message.content}"></span> </p> <br />
-Date Posted :<span th:text="${message.posteddate}"></span> <br />
-Posted by :<span th:text="${message.postedby}"></span><br />
+    <p class="lead"><span th:text="${message.content}"></span> </p>
+
+    <img th:src="${message.pic}" th:height="50" th:width="50" /><br />
+
+Date Posted : <span th:text="${message.posteddate}"></span> <br />
+Posted by : <span th:text="${message.postedby}"></span><br />
 
 <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -
 <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a> <br/> <br/>

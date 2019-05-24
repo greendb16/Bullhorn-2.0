@@ -12,10 +12,9 @@
 <div class="card">
     <h2 class="card-header">New Message</h2>
     <div class="card-body">
-<form action="#"
-      th:action="@{/process}"
-      th:object="${message}"
-      method="post">
+
+    <form method="post" action="/add" th:object="${message}"
+    enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
     Content : <textarea rows="(5)" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
@@ -25,7 +24,8 @@
           th:errors="*{posteddate}"></span><br />
     Posted by : <input type="text" th:field="*{postedby}" />
     <span th:if="${#fields.hasErrors('postedby')}"
-          th:errors="*{postedby}"></span><br />
+          th:errors="*{postedby}"></span><br /> <br/>
+    <input type="file" name="file" /><br/><br/>
     <br />
     <input type="submit" value="Post" />
 
