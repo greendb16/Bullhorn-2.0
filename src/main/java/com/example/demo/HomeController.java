@@ -30,7 +30,7 @@ public class HomeController {
     @PostMapping
     public String messageForm(@Valid Message message, BindingResult result) {
         if (result.hasErrors()) {
-            return "jobForm";
+            return "messageform";
         }
         messageRepository.save(message);
         return "redirect:/";
