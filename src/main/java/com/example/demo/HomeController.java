@@ -36,18 +36,18 @@ public class HomeController {
         return "redirect:/";
     }
     @RequestMapping("/detail/{id}")
-    public String showMessage(@PathVariable("id") long id, Model model){
-        model.addAttribute("message", messageRepository.findById(id).get());
+    public String showTodo(@PathVariable("id") long id, Model model){
+        model.addAttribute("todo", todoRepository.findById(id).get());
         return "show";
     }
     @RequestMapping("/update/{id}")
-    public String updateMessage(@PathVariable("id") long id, Model model){
-        model.addAttribute("message", messageRepository.findById(id).get());
-        return "messageform";
+    public String updateTodo(@PathVariable("id") long id, Model model){
+        model.addAttribute("todo", todoRepository.findById(id).get());
+        return "todoform";
     }
     @RequestMapping("/delete/{id}")
-    public String delMessage(@PathVariable("id") long id){
-        messageRepository.deleteById(id);
+    public String delTodo(@PathVariable("id") long id, Model model){
+        todoRepository.deleteById(id);
         return "redirect:/";
     }
-}
+    }

@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import sun.util.resources.Bundles;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,11 +23,13 @@ public class Message {
     public String content;
 
     @NotNull
-    public Date posteddate;
+    public String posteddate;
 
     @NotNull
     @Size(min = 1,max = 15)
     public String postedby;
+
+    public String pic;
 
 
     public long getId() {
@@ -46,11 +48,11 @@ public class Message {
         this.content = content;
     }
 
-    public Date getPosteddate() {
+    public String getPosteddate() {
         return posteddate;
     }
 
-    public void setPosteddate(Date posteddate) {
+    public void setPosteddate(String posteddate) {
         this.posteddate = posteddate;
     }
 
@@ -60,5 +62,13 @@ public class Message {
 
     public void setPostedby(String postedby) {
         this.postedby = postedby;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 }
