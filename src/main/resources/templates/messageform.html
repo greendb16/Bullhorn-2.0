@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Job Form</h2>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${message}"
+      method="post">
+    Content :<textarea rows="(4)" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}"></span>
+    Date Posted: <input type="date" th:field="*{posteddate}" />
+    <span th:if="${#fields.hasErrors('posteddate')}"
+          th:errors="*{posteddate}"></span>
+    Posted by <input type="text" th:field="*{postedby}" />
+    <span th:if="${#fields.hasErrors('postedby')}"
+          th:errors="*{postedby}"></span>
+    <br />
+    <input type="submit" value="Submit" />
+
+</form>
+
+</body>
+</html>
